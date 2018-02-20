@@ -1,0 +1,64 @@
+* {
+    font-size: 13px; 
+}
+
+table {
+    border-spacing: 0;
+    border: 1px solid black;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+th {
+    font-weight: bold;
+    text-align: left;
+    border: 1px solid black;
+}
+
+td {
+    border: 1px solid black;
+    padding: 2px;
+}
+
+.price {
+    float: right;
+}
+
+.app-message {
+    font-weight: bold;
+    display: inline-block;
+    margin: 0 0 10px 0;
+    font-size: 1.2em;
+}
+
+.neworderid {
+    margin: 10px 0 0 0;
+}
+
+.neworderid button {
+    padding: 0 4px;
+}
+.neworderid input {
+    width: 170px;
+    margin-left: 2px;
+}
+
+.different-email-warning {
+    color: red;
+    font-weight: bold;
+    float: right;
+    display: block;
+}
+
+.orders-bind-to-ticket {
+    min-width: 18px;
+    max-width: 22px;
+}
+
+.orders-bind-to-ticket-column {
+    width: 24px;
+}
+
+body.wait *, body.wait {
+    cursor: progress !important;
+}

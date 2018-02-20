@@ -1,0 +1,8 @@
+{
+  "app": {
+    "name": "JN rendelés adatok",
+    "short_description": "Belepillanthatsz a jegyhez tartozó rendelés adataiba.",
+    "long_description": "Lekérdezi a Játéknet API-tól a jegyhez tartozó megrendelés adatait.",
+    "installation_instructions": "Állítsd be az API végpontot és az áruháztól kapott kulcsodat, majd kattints az Install gombra."
+  }
+}

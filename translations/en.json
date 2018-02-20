@@ -1,0 +1,8 @@
+{
+  "app": {
+    "name": "JN order info",
+    "short_description": "Quickly see the order connected to current ticket.",
+    "long_description": "Asks Játéknet API about order data related to current ticket.",
+    "installation_instructions": "Setup API endpoint and your key and click install."
+  }
+}

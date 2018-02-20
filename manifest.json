@@ -1,0 +1,54 @@
+{
+    "name": "Játéknet app 2",
+    "author": {
+        "name": "Laszlo Repassy",
+        "email": "repassy.laszlo@jateknet.hu",
+        "url": "https://www.jateknet.hu"
+    },
+    "defaultLocale": "hu",
+    "private": false,
+    "location": {
+        "support": {
+            "ticket_sidebar": "assets/iframe.html"
+        }
+    },
+    "domainWhitelist": ["jateknet.dev", "www.jateknet.dev", "jateknet.hu", "www.jateknet.hu"],
+    "version": "1.0",
+    "frameworkVersion": "2.0",
+    "parameters": [ {
+            "name": "jateknet_api_root",
+            "type": "url",
+            "required": true,
+            "secure": false,
+            "default": "https://jateknet.dev/api/v1/"
+        },
+        {
+            "name": "jateknet_api_token",
+            "type": "text",
+            "required": true,
+            "secure": false,
+            "default": ""
+        },
+        {
+            "name": "jateknet_order_edit",
+            "type": "url",
+            "required": true,
+            "secure": false,
+            "default": ""
+        },
+        {
+            "name": "debug",
+            "type": "checkbox",
+            "required": true,
+            "secure": false,
+            "default": true
+        },
+        {
+            "name": "order_id_ticket_field_name",
+            "type": "text",
+            "required": true,
+            "secure": false,
+            "default": "ticket.customField:custom_field_114101358653"
+        }
+    ]
+}
