@@ -1,0 +1,15 @@
+{
+    "ticket_fields": {
+        "order_id": {
+            "type": "text",
+            "title": "Order ID"
+        }
+    },
+    "user_fields": {
+        "jn_admin_name": {
+            "key": "jn_admin_name",
+            "type": "text",
+            "title": "Admin login name"
+        }
+    }
+}

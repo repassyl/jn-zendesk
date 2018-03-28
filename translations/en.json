@@ -2,7 +2,7 @@
   "app": {
     "name": "JN order info",
     "short_description": "Quickly see the order connected to current ticket.",
-    "long_description": "Asks Játéknet API about order data related to current ticket.",
-    "installation_instructions": "Setup API endpoint and your key and click install."
+    "long_description": "Asks Játéknet API about order data related to current ticket. Displays it besides the ticket. Also it provides a link to jump to order details on jateknet.hu admin page.",
+    "installation_instructions": "Ask jateknet.hu about your jateknet_api_root (API endpoint), jateknet_api_token (API key), jateknet_order_edit settings and also 'Jateknet admin name' for your user. After installation you need to setup on 'App Configuration' screen the values you have been received. Keep debug field at default value. For setting up order_id_ticket_field_name field you should go to Settings / Manage / Ticket fields. Find Order ID and copy its Field ID. order_id_ticket_field_name should be like ticket.customField:custom_field_QQQQQQQQQQQQ where QQQQQQQQQQQQ is the Field ID. Example: 'ticket.customField:custom_field_360002952911'. Finally setup your 'Jateknet admin name' at your profile settings."
   }
 }

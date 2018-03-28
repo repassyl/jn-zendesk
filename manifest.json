@@ -5,14 +5,13 @@
         "email": "repassy.laszlo@jateknet.hu",
         "url": "https://www.jateknet.hu"
     },
-    "defaultLocale": "hu",
+    "defaultLocale": "en",
     "private": false,
     "location": {
         "support": {
             "ticket_sidebar": "assets/iframe.html"
         }
     },
-    "domainWhitelist": ["jateknet.dev", "www.jateknet.dev", "jateknet.hu", "www.jateknet.hu"],
     "version": "1.0",
     "frameworkVersion": "2.0",
     "parameters": [ {
@@ -39,16 +38,16 @@
         {
             "name": "debug",
             "type": "checkbox",
-            "required": true,
+            "required": false,
             "secure": false,
-            "default": true
+            "default": false
         },
         {
             "name": "order_id_ticket_field_name",
             "type": "text",
             "required": true,
             "secure": false,
-            "default": "ticket.customField:custom_field_114101358653"
+            "default": "ticket.customField:custom_field_QQQQQQQQQQQQ"
         }
     ]
 }
