@@ -1,5 +1,5 @@
 {
-    "name": "Játéknet app 2",
+    "name": "Játéknet app",
     "author": {
         "name": "Laszlo Repassy",
         "email": "repassy.laszlo@jateknet.hu",
@@ -12,7 +12,7 @@
             "ticket_sidebar": "assets/iframe.html"
         }
     },
-    "version": "1.0",
+    "version": "1.1",
     "frameworkVersion": "2.0",
     "parameters": [ {
             "name": "jateknet_api_root",

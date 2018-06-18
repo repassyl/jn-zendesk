@@ -44,10 +44,6 @@ var JateknetApp = {
         JateknetApp.setTicketData(ticketData);        
         JateknetApp.findOrderId();
         JateknetApp.setOrderId(this.order_id);
-        //https://developer.zendesk.com/apps/docs/apps-v2/using_sdk#working-with-framework-events
-        this.client.on("ticket.save", function () {
-          	return JateknetApp.syncHistory();
-        });
         UI.setupUI();
     },
 
@@ -304,52 +300,6 @@ var JateknetApp = {
 
     setOrderData: function (order_data) {
         this.order_data = order_data;
-    },
-
-    /**
-     * Elküldi a Zendesk ticket-hez tartozó ticketeket a Játéknet API-nak.
-     * Exportáljuk azt a ticket-et is, amelyiket épp most írtunk meg.
-     *
-     * @example:
-     *     var syncHistoryRequest = JateknetApp.syncHistory();
-     *     syncHistoryRequest.done(function (response) {
-     *         JateknetApp.log("syncHistory response=", response);
-     *     });
-     *     syncHistoryRequest.fail(function( jqXHR, textStatus ) {
-     *         JateknetApp.log("syncHistory response fail=", jqXHR);
-     *     });
-     *
-     */
-    syncHistory: function () {
-
-        if (!JateknetApp.getOrderId()) {
-            return;
-        }
-
-        // Lekérdezi a legfrissebb kommenteket.
-        return JateknetApp.client.get([
-          	"ticket.comments",
-        ]).then(function (response) {
-
-			JateknetApp.log("syncHistory: ", response);
-
-			return $.ajax({
-				method: "POST",
-				url: JateknetApp.settings.jateknet_api_root + "orders/" +
-				    JateknetApp.getOrderId() +
-				    "?auth=" +
-				    JateknetApp.getHash(),
-				dataType: "json",
-				crossDomain: true,
-				cache: false,
-				data: JSON.stringify({
-                    "action": "syncHistory",
-                    "admin_name":  JateknetApp.ticketData.jn_admin_name,
-                    "comments": response["ticket.comments"]
-				})
-			});
-
-        });
     }
 
 };

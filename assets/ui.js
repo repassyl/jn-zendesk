@@ -239,9 +239,6 @@ var UI = {
                 var templateData = {
                     "order": JateknetApp.order_data
                 };
-
-                JateknetApp.syncHistory();
-
             } catch (ex) {
                 console.error(ex);
                 var templateData = {
