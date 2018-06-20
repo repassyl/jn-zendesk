@@ -3,6 +3,23 @@
     "name": "JN rendelés adatok",
     "short_description": "Belepillanthatsz a jegyhez tartozó rendelés adataiba.",
     "long_description": "Lekérdezi a Játéknet API-tól a jegyhez tartozó megrendelés adatait. Megjeleníti a jegy többi adata mellett. Egy linket is megjelenít, mellyel a jateknet.hu admin oldalon megtekinthetőek a rendelés részletei.",
-    "installation_instructions": "Kérd el a jateknet.hu-tól a jateknet_api_root (API végpont), jateknet_api_token (API kulcs), jateknet_order_edit settings beállításokat, és az admin nevét a felhasználódnak. Installálás után be kell állítanod a 'App Configuration' oldalon a kapott értékeket. Hagyd meg a debug mező alapértelmezett értékét. Az order_id_ticket_field_name mező beállításához el kell menned a Settings / Manage / Ticket fields oldalra. Keresd meg a Order ID-t és másold a vágólapra az értékét. A order_id_ticket_field_name beállításnak így kell kinéznie: ticket.customField:custom_field_QQQQQQQQQQQQ ahol QQQQQQQQQQQQ a Field ID értéke. Példa: 'ticket.customField:custom_field_360002952911'. Végül állítsd be a 'Jateknet admin name' értékét a profil beállításoknál."
+    "installation_instructions": "Kérd el a jateknet.hu-tól a **Játéknet API gyökér**, **Játéknet API kulcs**, **Játéknet Order URL** beállításokat, és az admin nevét a felhasználódnak. \n\nInstallálás után be kell állítanod a 'App Configuration' oldalon a kapott értékeket. \n\nA **Jegy-mező név a rendelés azonosítóhoz** beállításához el kell menned a Settings / Manage / Ticket fields oldalra. Keresd meg a Order ID-t és másold a vágólapra az értékét. A **Jegy-mező név a rendelés azonosítóhoz** beállításnak így kell kinéznie: ticket.customField:custom field QQQQQQQQQQQQ ahol QQQQQQQQQQQQ a Field ID értéke. Példa: 'ticket.customField:custom field 360002952911'. \n\nVégül állítsd be a **Jateknet admin name** értékét a profil beállításoknál.",
+    "parameters": {
+      "jateknet_api_root": {
+        "label": "Játéknet API gyökér"
+      },
+      "jateknet_api_token": {
+        "label": "Játéknet API kulcs"
+      },
+      "jateknet_order_edit": {
+        "label": "Játéknet Order URL"
+      },
+      "debug": {
+        "label": "Debug"
+      },
+      "order_id_ticket_field_name": {
+        "label": "Jegy-mező név a rendelés azonosítóhoz"
+      }
+    }
   }
 }
