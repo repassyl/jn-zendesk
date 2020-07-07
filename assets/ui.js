@@ -75,8 +75,42 @@ var UI = {
         if(!newOrderId) {
             newOrderId = $("#new-order-id").val();
         }
-        if (newOrderId.toString().length > 4 && JateknetApp.order_id != newOrderId) {
-            JateknetApp.setOrderId(newOrderId);
+        if (JateknetApp.order_id === newOrderId) {
+            UI.alert("Már ez a rendelés ID van beállítva a jegyhez.");
+        } else {
+            let request = JateknetApp.getOrderData(newOrderId);
+            request.done(function (response) {
+                JateknetApp.log("getOrderdata response = ", response);
+                let order = response["order"];
+                $.confirm({
+                    title: 'Erre gondoltál?',
+                    content: "Hozzárendeled a "
+                        + '<a href="' + JateknetApp.settings.jateknet_order_edit + newOrderId + '" target="_blank">'
+                        + "#" + newOrderId 
+                        + '</a>'
+                        + " rendelést (vásárló: "
+                        + order["info"]["customer_name"]
+                        + " ("
+                        + order["info"]["customer_email_address"]
+                        + ") ehhez a ticket-hez?",
+                    buttons: {
+                        confirm: {
+                            action: function () {
+                                JateknetApp.setOrderId(newOrderId);
+                            },
+                            text: "Igen"
+                        },
+                        cancel: {
+                            action: function () {
+                            },
+                            text: "Mégsem"
+                        }
+                    }
+                });
+            });
+            request.fail(function (response) {
+                UI.alert("Nincs meg ez a rendelés.");
+            });
         }
     },
 

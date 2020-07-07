@@ -159,7 +159,7 @@ var JateknetApp = {
     },
 
     /**
-     * Beállítja a ticket-hez az OrderId-t.
+     * Beállítja a ticket-hez az OrderId-t a JN adatbázisban a JN API-n keresztül
      *
      * zafClient.set("ticket.customField:custom_field_114101358653", "2222222");
      * zafClient.get("ticket.customField:custom_field_114101358653");
@@ -177,8 +177,7 @@ var JateknetApp = {
         }
 
         JateknetApp.order_id = orderId;
-        var request = this.putTicketToOrder();
-        
+        let request = this.putTicketToOrder();
         request.done(function (response) {
             JateknetApp.log("setOrderId response: ", response);
             if(response.success) {
@@ -191,7 +190,6 @@ var JateknetApp = {
                 JateknetApp.order_id = null;
             }
         });
-
         request.fail(function (jqXHR, textStatus) {
             UI.displayErrorMessage(textStatus);
         });
@@ -266,10 +264,11 @@ var JateknetApp = {
      * Létrehoz egy jQuery ajax objektumot, ami egy megrendelés
      * adatait kérdezi le a Játéknet API-tól.
      */
-    getOrderData: function () {
+    getOrderData: function (order_id = null) {
+        order_id = order_id === null ? JateknetApp.order_id : order_id;
         return $.ajax({
 			method: "GET",
-			url: JateknetApp.settings.jateknet_api_root + "orders/" + JateknetApp.order_id,
+			url: JateknetApp.settings.jateknet_api_root + "orders/" + order_id,
 			dataType: "json",
 			crossDomain: true,
 			cache: false,
